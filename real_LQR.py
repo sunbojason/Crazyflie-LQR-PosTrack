@@ -184,7 +184,7 @@ def receiveNewFrame( frameNumber, markerSetCount, unlabeledMarkersCount, rigidBo
 # This is a callback function that gets connected to the NatNet client. It is called once per rigid body per frame
 def receiveRigidBodyFrame( id, position, rotation ):
     global pos_ot
-    if id==3:
+    if id==1:
         # opti_track z x y
         # crazyflie x y z
         pos_ot[0,0] = position[2]
@@ -233,7 +233,7 @@ if __name__ == '__main__':
             while(True):
                 time_now = round(time.time()*1000)%1000000-time0 # timestamp (ms)
 
-                ref_now = ref_pos.circle(time_now/1000) # (s)
+                ref_now = ref_pos.eight(time_now/1000) # (s)
                 pos_ot_now = pos_ot-pos_ot0
                 state_now = np.array([pos_ot_now[0,0], pos_ot_now[0,1], pos_ot_now[0,2], vex, vey, vez, phi, theta])
                 pos_now = np.array([pos_ot_now[0,0], pos_ot_now[0,1], pos_ot_now[0,2]])

@@ -24,7 +24,7 @@ dt = 0.02
 Q = np.diag([0,0,0,0,0,0,0,0,10,10,10])
 R = np.diag([1,10,10])
 T_trim = 9.81
-Tb =  (65535/42000)**2*T_trim # thrust constriant
+Tb =  (65535/45000)**2*T_trim # thrust constriant
 Ab = 25/180*np.pi# angle constraint
 # initialization
 state_now = np.array([0,0,0,0,0,0,0,0])
